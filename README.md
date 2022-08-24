@@ -9,7 +9,11 @@ The basic clustering algorithm, objective function, dynamic ensemble pruning are
 
 2. Rstudio (optional)
 
-3. library([scDHA](https://github.com/duct317/scDHA))
+3. [scDHA](https://github.com/duct317/scDHA)
+
+5. R.matlab
+
+7. SingleCellExperiment
 
 ### MATLAB enviroment
  1. MATLAB 2019b 
