@@ -40,6 +40,7 @@ The basic clustering algorithm, objective function, dynamic ensemble pruning are
 7. Run the file ***DEPF/bi-objective fruit fly optimization algorithm/main.mlx***.
 
 8. Output the file ***DEPF/bi-objective fruit fly optimization algorithm/output_data*** including the NMI and ARI results of pollen data.
+    > pollen: NMI<- 0.96,   ARI<-0.94;
 
 ## Citation
 
