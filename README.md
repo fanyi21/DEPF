@@ -3,7 +3,7 @@ We propose a dynamic ensemble pruning framework (DEPF) to identify and interpret
 
 ## DATA AVAILABILITY
 The unsupervised dimensionality reduction is implemented in R.
-The basic clustering algorithm, objective function, dynamic ensemble pruning are implemented in MATLAB. 
+The basic clustering algorithm, objective function, bi-objective fruit fly optimization algorithm are implemented in MATLAB. 
 ### R enviroment
 1. R 4.1.1
 
@@ -21,25 +21,25 @@ The basic clustering algorithm, objective function, dynamic ensemble pruning are
 
 ## How to run (for example: Windows operating system)
 
-1. Download the file: ***DEPF***.
+1. Download the file: ***DEPF-main***.
 
-2. Open the file  ***DEPF/Hierarchical autoencoder*** in Rstudio by double-clicking ***DEPF/Hierarchical autoencoder/Hierarchical autoencoder.Rproj***.
+2. Open the file  ***DEPF-main/Hierarchical autoencoder*** in Rstudio by double-clicking ***DEPF-main/Hierarchical autoencoder/Hierarchical autoencoder.Rproj***.
 
 3. Run the code ```devtools::load_all(".")``` in Console.
 
 4. Run the file ***./main.R***.
 
-    > In particular, an example of scRNA-seq data is ***pollen.rds*** provided in ***DEPF/scRNAseqData***.
+    > In particular, an example of scRNA-seq data is ***pollen.rds*** provided in ***DEPF-main/scRNAseqData***.
     
     > The 28 real scRNA-seq datasets and one large-scale real scRNA-seq dataset are describled in METHODS of paper.
 
-5. Output the file ***DEPF/9_latent_data***.
+5. Output the file ***DEPF-main/9_latent_data***.
 
-6. Open the file ***DEPF/bi-objective fruit fly optimization algorithm*** in MATLAB.
+6. Open the file ***DEPF-main/bi-objective fruit fly optimization algorithm*** in MATLAB.
 
-7. Run the file ***DEPF/bi-objective fruit fly optimization algorithm/main.mlx***.
+7. Run the file ***DEPF-main/bi-objective fruit fly optimization algorithm/main.mlx***.
 
-8. Output the file ***DEPF/bi-objective fruit fly optimization algorithm/output_data*** including the NMI and ARI results of pollen data.
+8. Output the file ***DEPF-main/bi-objective fruit fly optimization algorithm/output_data*** including the NMI and ARI results of pollen data.
     > pollen: NMI<- 0.96,   ARI<-0.94;
 
 ## Citation
