@@ -3,7 +3,7 @@ We propose a dynamic ensemble pruning framework (DEPF) to identify and interpret
 
 ## DATA AVAILABILITY
 The hierarchical autoencoder is implemented in R.
-The bi-objective fruit fly optimization algorithm are implemented in MATLAB. 
+The bi-objective fruit fly optimization algorithm is implemented in MATLAB. 
 ### R enviroment
 1. R 4.1.1
 
