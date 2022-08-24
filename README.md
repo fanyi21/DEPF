@@ -5,8 +5,48 @@ We propose a dynamic ensemble pruning framework (DEPF) to identify and interpret
 The unsupervised dimensionality reduction is implemented in R.
 The basic clustering algorithm, objective function, dynamic ensemble pruning are implemented in MATLAB. 
 ### R enviroment
-R 4.1.1
+1. R 4.1.1
 
+2. Rstudio (optional)
+
+3. library([scDHA](https://github.com/duct317/scDHA))
 
 ### MATLAB enviroment
- MATLAB 2019b 
+ 1. MATLAB 2019b 
+
+
+## How to run (for example: Windows operating system)
+
+1. Download the file: ***DEPF***.
+
+2. Open the file  ***DEPF/Hierarchical autoencoder*** in Rstudio by double-clicking ***DEPF/Hierarchical autoencoder/Hierarchical autoencoder.Rproj***.
+
+3. Run the code ```devtools::load_all(".")``` in Console.
+
+4. Run the file ***./main.R***.
+
+    > In particular, an example of scRNA-seq data is ***pollen.rds*** provided in ***DEPF/scRNAseqData***.
+
+5. Output the file ***DEPF/9_latent_data***.
+
+6. Open the file ***DEPF/bi-objective fruit fly optimization algorithm*** in MATLAB.
+
+7. Run the file ***DEPF/bi-objective fruit fly optimization algorithm/main.mlx***.
+
+8. Output the file ***DEPF/bi-objective fruit fly optimization algorithm/output_data*** including the NMI and ARI results of pollen data.
+
+## Citation
+
+1. scDHA
+
+    > "Tran, D., Nguyen, H., Tran, B., La Vecchia, C., Luu, H. N., & Nguyen, T. (2021).", "Fast and precise single-cell data analysis using a hierarchical autoencoder.", "Nature Communications, 12, 1029.", "URL: https://www.nature.com/articles/s41467-021-21312-2"
+
+2. the basic clustering algorithm
+
+    > "D. Huang, C.-D. Wang, J.-S. Wu, J.-H. Lai, and C.-K. Kwoh.", "Ultra-Scalable Spectral Clustering and Ensemble Clustering.", "IEEE Transactions on Knowledge and Data Engineering, 2020.", DOI: https://doi.org/10.1109/TKDE.2019.2903410   
+
+3. the consensus clustering algorithm
+
+    > "Dong Huang, Chang-Dong Wang, and Jian-Huang Lai.", "Locally weighted ensemble clustering.", "IEEE Transactions on Cybernetics, 2018, 48(5), pp.1460-1473."  
+
+
