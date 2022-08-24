@@ -26,6 +26,8 @@ The basic clustering algorithm, objective function, dynamic ensemble pruning are
 4. Run the file ***./main.R***.
 
     > In particular, an example of scRNA-seq data is ***pollen.rds*** provided in ***DEPF/scRNAseqData***.
+    
+    > The 28 real scRNA-seq datasets and one large-scale real scRNA-seq dataset are describled in METHODS of paper.
 
 5. Output the file ***DEPF/9_latent_data***.
 
