@@ -1,7 +1,12 @@
-library(R.matlab)
-library(SingleCellExperiment)
-library(scDHA)
-library(pryr) # record memory
+pkg <- c("R.matlab", "SingleCellExperiment", "scDHA")
+ipak <- function(pkg){
+  new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
+  if (length(new.pkg)) 
+    install.packages(new.pkg, dependencies = TRUE)
+  sapply(pkg, require, character.only = TRUE)
+}
+ipak(pkg)
+
 devtools::load_all(".")
 current.path <- getwd()
 current.path <- sub('/HierarchicalAutoencoder','',current.path)
