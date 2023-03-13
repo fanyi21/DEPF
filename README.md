@@ -45,19 +45,24 @@ DEPF: Reliable Identification and Interpretation of Single-cell Molecular Hetero
 ***DEPF:*** a **dynamic ensemble pruning framework (DEPF)** is proposed to identify and interpret single-cell molecular heterogeneity. In particular, a **silhouette coefficient-based indicator** is developed and evaluated to determine the optimization direction of the bi-objective function. In addition, a **hierarchical autoencoder** is employed to project the high-dimensional scRNA-seq data onto multiple low-dimensional latent space sets, and then a **clustering ensemble** is produced in the latent space by the basic clustering algorithm. Following that, a **bi-objective fruit fly optimization algorithm** is designed to prune dynamically the low-quality basic clustering in the ensemble. 
 
 
-***DEPF*** is constructed based on multiple [RNA-RBP binding semantic models](https://figshare.com/articles/software/LM_for_RBP_package/21383187) (RBPBERT, FastText, GloVe, Word2Vec, Doc2Vec) developed by ourselves. It provides four **advanced features**:
+***DEPF*** is constructed based on four modules (***Normalization, Hierarchical Autoencoder, Clustering Ensemble,  Dynamic Ensemble Pruning***) developed by ourselves. It provides eight **advanced features**:
+- &#x1F31E; ***Dynamic ensemble pruning***: many could be better than all
+- &#x1F34E; ***DEPF*** can identify rare cell types and small clusters that would not be picked up by other methods
+- &#x1F31E; ***DEPF*** can identify novel clusters that other traditional methods failed to detect
+- &#x1F34E; ***DEPF*** can provide biological interpretation of scRNA-seq data
+- &#x1F31E; ***DEPF*** can discover transcriptional and post-transcriptional regulators in scRNA-seq
+data
 - &#x1F34E; Unified, easy-to-use APIs, detailed [documentation](https://rbp-package.readthedocs.io/) and [examples](https://rbp-package.readthedocs.io/en/latest/basic_usage.html).
-- &#x1F34E; Capable for out-of-the-box ***RNA-RBP binding event*** characterization and downstream experiments.
-- &#x1F34E; Powerful, customizable performance and feature analysis visualizer.
-- &#x1F34E; Full compatibility with other popular packages like [scikit-learn](https://scikit-learn.org/stable/) and [yellowbrick](https://www.scikit-yb.org/en/latest/index.html).
+- &#x1F31E; Powerful, customizable performance and feature analysis visualizer.
+- &#x1F34E; Full compatibility with other popular packages like [Seurat](https://satijalab.org/seurat/).
 
 ## Getting Started
-<img src="https://github.com/fanyi21/DEPF/blob/main/ModularityOfDEPF.png" alt = "DEPF" style="zoom:20%" align = center />
+<img src="https://github.com/fanyi21/DEPF/blob/main/ModularityOfDEPF.png" alt = "DEPF" style="zoom:100%" align = center />
 
 
 
 
-## Generating features using PyRBP with 7 Lines of Code:
+## :
 
 
 
