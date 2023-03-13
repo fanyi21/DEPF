@@ -24,7 +24,6 @@ DEPF: Reliable Identification and Interpretation of Single-cell Molecular Hetero
   <a href="https://github.com/fanyi21/DEPF/graphs/traffic">
     <img src="https://visitor-badge.glitch.me/badge?page_id=fanyi21.DEPF">
   </a>
-  <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/no-banana/PyRBP/total">
   <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 <a href="https://github.com/fanyi21/DEPF#contributors-"><img src="https://img.shields.io/badge/all_contributors-2-orange.svg"></a>
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
