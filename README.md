@@ -51,8 +51,8 @@ DEPF: Reliable Identification and Interpretation of Single-cell Molecular Hetero
 - &#x1F34E; Powerful, customizable performance and feature analysis visualizer.
 - &#x1F34E; Full compatibility with other popular packages like [scikit-learn](https://scikit-learn.org/stable/) and [yellowbrick](https://www.scikit-yb.org/en/latest/index.html).
 
-## Modularity of DEPF
-<img src="https://github.com/fanyi21/DEPF/blob/main/ModularityOfDEPF.png" alt = "DEPF" style="zoom:50%" align = center />
+## Getting Started
+<img src="https://github.com/fanyi21/DEPF/blob/main/ModularityOfDEPF.png" alt = "DEPF" style="zoom:20%" align = center />
 
 
 
