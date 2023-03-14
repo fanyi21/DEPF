@@ -80,6 +80,7 @@ $ git clone https://github.com/fanyi21/DEPF.git
 # # install the dependencies
 $ cd DEPF/DEPF/HierarchicalAutoencoder/
 $ Rscript RequirePackage.R
+# install MATLAB according to the official website tutorial
 ```
 ### Example
  &#x1F341; ***Step 1***: Normalizing and mapping the raw scRNA-seq data to a low-dimensional latent space. A ***9_latent_data*** folder is produced and saved in the ***./OutputData***.
