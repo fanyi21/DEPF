@@ -44,8 +44,7 @@ DEPF: Reliable Identification and Interpretation of Single-cell Molecular Hetero
 
 ***DEPF:*** a **dynamic ensemble pruning framework (DEPF)** is proposed to identify and interpret single-cell molecular heterogeneity. In particular, a **silhouette coefficient-based indicator** is developed and evaluated to determine the optimization direction of the bi-objective function. In addition, a **hierarchical autoencoder** is employed to project the high-dimensional scRNA-seq data onto multiple low-dimensional latent space sets, and then a **clustering ensemble** is produced in the latent space by the basic clustering algorithm. Following that, a **bi-objective fruit fly optimization algorithm** is designed to prune dynamically the low-quality basic clustering in the ensemble. 
 
-
-***DEPF*** is constructed based on four modules (***Normalization, Hierarchical Autoencoder, Clustering Ensemble,  Dynamic Ensemble Pruning***) developed by ourselves. It provides eight **advanced features**:
+***DEPF*** is constructed based on four modules (***Normalization, Hierarchical Autoencoder, Clustering Ensemble,  Dynamic Ensemble Pruning***) developed by ourselves. It provides eight **highlights**:
 - &#x1F31E; ***Dynamic ensemble pruning***: many could be better than all.
 - &#x1F34E; ***DEPF*** can identify rare cell types and small clusters that would not be picked up by other methods.
 - &#x1F31E; ***DEPF*** can identify novel clusters that other traditional methods failed to detect.
@@ -60,11 +59,10 @@ DEPF: Reliable Identification and Interpretation of Single-cell Molecular Hetero
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
 - [Installation](#installation)
 - [Example](#Example)
 
-## Installation
+### Installation
 It is recommended to use **git** for installation.  
 ```shell
 # create a virtual environment named DEPF
@@ -83,89 +81,43 @@ $ git clone https://github.com/fanyi21/DEPF.git
 $ cd DEPF/DEPF/HierarchicalAutoencoder/
 $ Rscript RequirePackage.R
 ```
-## Example
-
-
-
-After this, the torch also needs to be installed separately according to the cuda version of your device, e.g. CUDA 10.2 can be used with the following command.
+### Example
+ &#x1F341; ***Step 1***: Normalizing and mapping the raw scRNA-seq data to a low-dimensional latent space. A ***9_latent_data*** folder is produced and saved in the ***./OutputData***.
 ```shell
-$ pip install torch==1.8.1+cu102 torchvision==0.9.1+cu102 torchaudio==0.8.1 -f https://download.pytorch.org/whl/torch_stable.html
+$ cd DEPF/HierarchicalAutoencoder/
+$ Rscript runHA.R
 ```
-scikit-feature can be installed in a virtual environment with the following command 
-```shell
-git clone https://github.com/jundongl/scikit-feature.git
-cd scikit-feature
-python setup.py install
+&#x1F341; ***Step 2***: Selecting a basic clustering algorithm to generate a clustering ensemble. DEPF provides three basic clustering algorithms, including ***Louvain***, ***Leiden***, and ***spectral clustering***.
+- &#x1F346; ***Louvain***. The ***Louvain_resolution_1.csv*** is produced and saved in the ***./OutputData***.
+```r
+source("runLouvain.R")
+#res: resolution
+runLouvain(res=1) 
 ```
-
-The language models used in PyRBP can be downloaded from [figshare](https://figshare.com/articles/software/LM_for_RBP_package/21383187)
-
-Note for OSX users: due to its use of OpenMP, glove-python-binary does not compile under Clang. To install it, you will need a reasonably recent version of `gcc` (from Homebrew for instance). This should be picked up by `setup.py`.
-```shell
-git clone https://github.com/maciejkula/glove-python.git
-cd glove-python
-python setup.py install
+- &#x1F346; ***Leiden***. The ***Leiden_resolution_1.csv*** is produced and saved in the ***./OutputData***.
+```r
+source("runLleiden.R")
+#res: resolution
+runLeiden(res=1) 
 ```
-
-
-PyRBP requires following dependencies:
-
-- [Python](https://www.python.org/) (>=3.6)
-- [gensim](https://radimrehurek.com/gensim/index.html) (>=3.8.3)
-- [GloVe](https://pypi.org/project/glove-python-binary/) (>=0.2.0)
-- [numpy](https://numpy.org/) (>=1.19.5)
-- [pandas](https://pandas.pydata.org/) (>=1.3.5)
-- [scipy](https://www.scipy.org/) (>=0.19.1)
-- [joblib](https://pypi.org/project/joblib/) (>=0.11)
-- [scikit-learn](https://scikit-learn.org/stable/) (>=0.24.2)
-- [matplotlib](https://matplotlib.org/) (>=3.5.3)
-- [seaborn](https://seaborn.pydata.org/) (>=0.11.2)
-- [shap](https://shap.readthedocs.io/en/latest/index.html) (>=0.41.0)
-- [skfeature](https://jundongl.github.io/scikit-feature/index.html) (>=1.0.0)
-- [tensorflow-gpu](https://tensorflow.google.cn/) (>=2.4.0)
-- [torch](https://pytorch.org/) (>=1.8.1)
-- [transformers](https://huggingface.co/docs/transformers/index) (4.12.5)
-- [yellowbrick](https://www.scikit-yb.org/en/latest/index.html) (>=1.3)
-- [tqdm](https://tqdm.github.io/) (>=4.64.0)
-
-## Highlights
-
-- &#x1F34E; ***Unified, easy-to-use APIs***  
-The functions in each module in PyRBP have individual unified APIs. 
-- &#x1F34E; ***Extended functionalities, wider application scenarios.***  
-*PyRBP provides interfaces for conducting downstream **RNA-RBP binding event** experiments,* including feature selection, model cross validation, feature and performance analysis visualization. 
-- &#x1F34E; ***Detailed training log, quick intuitive visualization.***   
-We provide additional parameters in characterization functions for users to control the window to capture information of different views they want to monitor during the sequence encoding. We also implement an [`metricsPlot`](https://rbp-package.readthedocs.io/en/latest/analysis_plots.html) to quickly visualize the results of feature analysis or model evaluation for providing further information/conducting comparison. See an example [here](https://rbp-package.readthedocs.io/en/latest/plotAnalysis_examples.html).
-- &#x1F34E; ***Wide compatiblilty.***   
-IMBENS is designed to be compatible with [scikit-learn](https://scikit-learn.org/stable/) (sklearn) and also other projects like [yellowbrick](https://www.scikit-yb.org/en/latest/index.html). Therefore, users can take advantage of various utilities from the sklearn community for cross validation or result visualization, etc.
-
-## List of implemented methods
-
-**Currently (v0.1.0, 2023/03), *13* RNA-RBP binding event characterization methods were implemented:  
-(Click to jump to the document page)**
-
-- **RNA-RBP binding semantic based**
-  - *[Dynamic global semantic information](https://rbp-package.readthedocs.io/en/latest/RNA_features.html#PyRBP.Features.generateDynamicLMFeatures)*
-  - *[Static local semantic information](https://rbp-package.readthedocs.io/en/latest/RNA_features.html#PyRBP.Features.generateStaticLMFeatures)*
-    1. **[`FastText`]**
-    2. **[`GloVe`]**
-    3. **[`Word2Vec`]**
-    4. **[`Doc2Vec`]**
-- **RNA secondary structure based**
-  - *[Secondary structure information](https://rbp-package.readthedocs.io/en/latest/RNA_features.html#PyRBP.Features.generateStructureFeatures)*
-- **RNA physicochemical properties**
-  - *[pseudoKNC](https://rbp-package.readthedocs.io/en/latest/RNA_features.html#PyRBP.Features.generateBPFeatures)*
-  - *[zigzag coding](https://rbp-package.readthedocs.io/en/latest/RNA_features.html#PyRBP.Features.generateBPFeatures)*
-  - *[Guanine cytosine Quantity](https://rbp-package.readthedocs.io/en/latest/RNA_features.html#PyRBP.Features.generateBPFeatures)*
-  - *[Nucleotides tilt](https://rbp-package.readthedocs.io/en/latest/RNA_features.html#PyRBP.Features.generateBPFeatures)*
-  - *[Percentage of bases](https://rbp-package.readthedocs.io/en/latest/RNA_features.html#PyRBP.Features.generateBPFeatures)*
-  - *[Positional gapped k-m-tuple pairs](https://rbp-package.readthedocs.io/en/latest/RNA_features.html#PyRBP.Features.generateBPFeatures)*
-  - *[DPCP](https://rbp-package.readthedocs.io/en/latest/RNA_features.html#PyRBP.Features.generateBPFeatures)*
-
-> **Note: `PyRBP` is still under development, please see [API reference](https://rbp-package.readthedocs.io/en/latest/index.html) for the latest list.**
+- &#x1F346; ***spectral clustering***. The ***spectral_cluster_K_10.csv*** is produced and saved in the ***./OutputData***.
+```matlab
+$ cd DEPF/BiobjectiveFruitFlyOptimizationAlgorithm/
+% K: cluster number; T: ensemble size
+runSpectral(K=10, T=10) 
+```
+&#x1F341; ***Step 3***: Performing dynamic ensemble pruning. The ***final_clustering.csv*** is produced and saved in the ***./OutputData***.
+```matlab
+$ cd DEPF/BiobjectiveFruitFlyOptimizationAlgorithm/
+runBioFOA("spectral", 10, 1)
+% output
+NMI: 0.8900
+ARI: 0.9100
+```
+> **Note: `DEPF` is still under development, please see [API reference](https://rbp-package.readthedocs.io/en/latest/index.html) for the latest list.**
 
 ## Contact:
-Thank you for using PyRBP! Any questions, suggestions or advices are welcome.
+Thank you for using DEPF! Any questions, suggestions or advices are welcome.
 
-email address:[lixt314@jlu.edu.cn](lixt314@jlu.edu.cn), [wys21@mails.jlu.edu.cn](wys21@mails.jlu.edu.cn)
+email address:[lixt314@jlu.edu.cn](lixt314@jlu.edu.cn), [fanyi21@mails.jlu.edu.cn](fanyi21@mails.jlu.edu.cn)
 
