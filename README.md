@@ -26,7 +26,7 @@ DEPF: Reliable Identification and Interpretation of Single-cell Molecular Hetero
   </a>
   <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/no-banana/PyRBP/total">
   <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<a href="https://github.com/fanyi21/DEPF#contributors-"><img src="https://img.shields.io/badge/all_contributors-2-orange.svg"></a>
+<a href="https://github.com/fanyi21/DEPF#contributors-"><img src="https://img.shields.io/badge/all_contributors-7-orange.svg"></a>
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 </p>
 
@@ -46,12 +46,11 @@ DEPF: Reliable Identification and Interpretation of Single-cell Molecular Hetero
 
 
 ***DEPF*** is constructed based on four modules (***Normalization, Hierarchical Autoencoder, Clustering Ensemble,  Dynamic Ensemble Pruning***) developed by ourselves. It provides eight **advanced features**:
-- &#x1F31E; ***Dynamic ensemble pruning***: many could be better than all
-- &#x1F34E; ***DEPF*** can identify rare cell types and small clusters that would not be picked up by other methods
-- &#x1F31E; ***DEPF*** can identify novel clusters that other traditional methods failed to detect
-- &#x1F34E; ***DEPF*** can provide biological interpretation of scRNA-seq data
-- &#x1F31E; ***DEPF*** can discover transcriptional and post-transcriptional regulators in scRNA-seq
-data
+- &#x1F31E; ***Dynamic ensemble pruning***: many could be better than all.
+- &#x1F34E; ***DEPF*** can identify rare cell types and small clusters that would not be picked up by other methods.
+- &#x1F31E; ***DEPF*** can identify novel clusters that other traditional methods failed to detect.
+- &#x1F34E; ***DEPF*** can provide biological interpretation of scRNA-seq data.
+- &#x1F31E; ***DEPF*** can discover transcriptional and post-transcriptional regulators in scRNA-seq data.
 - &#x1F34E; Unified, easy-to-use APIs, detailed [documentation](https://rbp-package.readthedocs.io/) and [examples](https://rbp-package.readthedocs.io/en/latest/basic_usage.html).
 - &#x1F31E; Powerful, customizable performance and feature analysis visualizer.
 - &#x1F34E; Full compatibility with other popular packages like [Seurat](https://satijalab.org/seurat/).
@@ -59,47 +58,35 @@ data
 ## Getting Started
 <img src="https://github.com/fanyi21/DEPF/blob/main/ModularityOfDEPF.png" alt = "DEPF" style="zoom:100%" align = center />
 
-
-
-
-## :
-
-
-
-
-```python
-# Generate RNA physicochemical properties
-from PyRBP.Features import generateBPFeatures
-from PyRBP.featureSelection import cife
-from PyRBP.metricsPlot import shap_interaction_scatter
-bp_features = generateBPFeatures(sequences, PGKM=True)
-
-# Filter the original features
-refined_features = cife(bp_features, label, num_features=10)
-
-# Performance visualization of SVM using PyRBP
-clf = SVC(probability=True)
-shap_interaction_scatter(refined_features, label, clf=clf, sample_size=(0, 100), feature_size=(0, 10), image_path='./')
-```
-
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
 - [Installation](#installation)
-- [Highlights](#highlights)
-- [List of implemented methods](#list-of-implemented-methods)
-
+- [Example](#Example)
 
 ## Installation
-
 It is recommended to use **git** for installation.  
 ```shell
-$ conda create -n PyRBP python=3.7.6            # create a virtual environment named PyRBP
-$ conda activate PyRBP                          # activate the environment  
-$ git clone https://github.com/no-banana/PyRBP.git # clone this repository
-$ cd PyRBP
-$ pip install -r requirement.txt               # install the dependencies of PyRBP
+# create a virtual environment named DEPF
+$ conda create -n DEPF    
+# activate the environment       
+$ conda activate DEPF   
+# install R enviroment
+$ conda install -c conda-forge r-base=4.1.3
+$ conda install -c conda-forge r-devtools
+$ conda install -c conda-forge r-seurat
+$ conda install python=3.9
+$ pip install leidenalg
+# clone DEPF repository                  
+$ git clone https://github.com/fanyi21/DEPF.git
+# # install the dependencies
+$ cd DEPF/DEPF/HierarchicalAutoencoder/
+$ Rscript RequirePackage.R
 ```
+## Example
+
+
+
 After this, the torch also needs to be installed separately according to the cuda version of your device, e.g. CUDA 10.2 can be used with the following command.
 ```shell
 $ pip install torch==1.8.1+cu102 torchvision==0.9.1+cu102 torchaudio==0.8.1 -f https://download.pytorch.org/whl/torch_stable.html
