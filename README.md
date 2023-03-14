@@ -89,12 +89,14 @@ $ Rscript runHA.R
 &#x1F341; ***Step 2***: Selecting a basic clustering algorithm to generate a clustering ensemble. DEPF provides three basic clustering algorithms, including ***Louvain***, ***Leiden***, and ***spectral clustering***.
 - &#x1F346; ***Louvain***. The ***Louvain_resolution_1.csv*** is produced and saved in the ***./OutputData***.
 ```r
+$ cd DEPF/HierarchicalAutoencoder/
 source("runLouvain.R")
 #res: resolution
 runLouvain(res=1) 
 ```
 - &#x1F346; ***Leiden***. The ***Leiden_resolution_1.csv*** is produced and saved in the ***./OutputData***.
 ```r
+$ cd DEPF/HierarchicalAutoencoder/
 source("runLleiden.R")
 #res: resolution
 runLeiden(res=1) 
