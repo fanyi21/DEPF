@@ -5,15 +5,14 @@ library(SingleCellExperiment)
 library(tidyverse)
 library(data.table)
 library(Seurat)
-library(ggsci)
 library(Matrix)
 #########################  data path  ------------------------------------------
 algorithm.dataname <- "Louvain_resolution_"
-print(algorithm.dataname)
+print("run Louvain")
 res <- seq(from = 0.2,to = 1,length.out = 5)  #######  设定一个固定值
 current.path <- getwd()
 package.path <- sub('/HierarchicalAutoencoder', '', current.path)
-data.path <- paste(package.path, "/scRNAseqdata/", sep = "")
+data.path <- paste(package.path, "/scRNAseqData/", sep = "")
 out.path <- paste(package.path, "/OutputData/", sep = "")
 fileName <- dir(data.path)
 dataname <- sub('.rds','',fileName)

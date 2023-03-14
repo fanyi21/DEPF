@@ -1,11 +1,6 @@
-pkg <- c("R.matlab", "SingleCellExperiment", "scDHA")
-ipak <- function(pkg){
-  new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
-  if (length(new.pkg)) 
-    install.packages(new.pkg, dependencies = TRUE, repos = "http://cran.us.r-project.org")
-  sapply(pkg, require, character.only = TRUE)
-}
-ipak(pkg)
+library(R.matlab)
+library(SingleCellExperiment)
+library(scDHA)
 
 devtools::load_all(".")
 current.path <- getwd()
