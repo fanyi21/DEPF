@@ -6,8 +6,8 @@ DEPF: Reliable Identification and Interpretation of Single-cell Molecular Hetero
   <a href="https://github.com/fanyi21/DEPF">
     <img src="https://img.shields.io/badge/DEPF-R&MATLAB&Cpp-orange">
   </a>
-  <a href='https://rbp-package.readthedocs.io/en/latest/?badge=latest'>
-    <img src='https://readthedocs.org/projects/rbp-package/badge/?version=latest' alt='Documentation Status' />
+  <a href='https://depf.readthedocs.io/en/latest/'>
+    <img src='https://readthedocs.org/projects/depf/badge/?version=latest' alt='Documentation Status' />
   </a>
   <a href="https://github.com/fanyi21/DEPF/stargazers">
     <img src="https://img.shields.io/github/stars/fanyi21/DEPF">
@@ -24,7 +24,7 @@ DEPF: Reliable Identification and Interpretation of Single-cell Molecular Hetero
   <a href="https://github.com/fanyi21/DEPF/graphs/traffic">
     <img src="https://visitor-badge.glitch.me/badge?page_id=fanyi21.DEPF">
   </a>
-  <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/no-banana/PyRBP/total">
+  <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/fanyi21/DEPF/total">
   <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 <a href="https://github.com/fanyi21/DEPF#contributors-"><img src="https://img.shields.io/badge/all_contributors-7-orange.svg"></a>
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
@@ -36,8 +36,8 @@ DEPF: Reliable Identification and Interpretation of Single-cell Molecular Hetero
   <a href=""> Changelog </a>  
   Links:
   <a href="https://github.com/fanyi21/DEPF#Modularity of DEPF">Getting Started</a> |
-  <a href="https://rbp-package.readthedocs.io/">API Reference</a> |
-  <a href="https://rbp-package.readthedocs.io/en/latest/basic_usage.html">Examples</a>**
+  <a href="https://depf.readthedocs.io/en/latest/">API Reference</a> |
+  <a href="https://depf.readthedocs.io/en/latest/">Examples</a>**
   
 
 
@@ -115,7 +115,7 @@ runBioFOA("spectral", 10, 1)
 NMI: 0.8900
 ARI: 0.9100
 ```
-> **Note: `DEPF` is still under development, please see [API reference](https://rbp-package.readthedocs.io/en/latest/index.html) for the latest list.**
+> **Note: `DEPF` is still under development, please see [API reference](https://depf.readthedocs.io/en/latest/) for the latest list.**
 
 ## Contact:
 Thank you for using DEPF! Any questions, suggestions or advices are welcome.
