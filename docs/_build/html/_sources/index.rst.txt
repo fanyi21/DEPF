@@ -16,6 +16,7 @@ Welcome to DEPF's documentation!
 
 .. figure:: ./figure/DEPFframework.png
    :align: center
+   :alt: DEPF framework
 
 **DEPF** is constructed based on four modules (**Normalization, Hierarchical Autoencoder, Clustering Ensemble,  Dynamic Ensemble Pruning**) developed by ourselves.
 
