@@ -14,7 +14,7 @@ Welcome to DEPF's documentation!
 ::
    put the bib here
 
-.. figure:: ../Figure/DEPFframework.png
+.. figure:: ../figure/DEPFframework.png
    :align: center
    :width: 5.63529in
    :height: 0.97222in
