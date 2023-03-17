@@ -44,6 +44,8 @@ DEPF: Reliable Identification and Interpretation of Single-cell Molecular Hetero
 
 ***DEPF:*** A **dynamic ensemble pruning framework (DEPF)** is proposed to identify and interpret single-cell molecular heterogeneity. In particular, a **silhouette coefficient-based indicator** is developed and evaluated to determine the optimization direction of the bi-objective function. In addition, a **hierarchical autoencoder** is employed to project the high-dimensional scRNA-seq data onto multiple low-dimensional latent space sets, and then a **clustering ensemble** is produced in the latent space by the basic clustering algorithm. Following that, a **bi-objective fruit fly optimization algorithm** is designed to prune dynamically the low-quality basic clustering in the ensemble. 
 
+<img src="./docs/figure/DEPFframwork.png" alt = "overview" style="zoom:100%" align = center />
+
 ***DEPF*** is constructed based on four modules (***Normalization, Hierarchical Autoencoder, Clustering Ensemble,  Dynamic Ensemble Pruning***) developed by ourselves. It provides five **highlights**:
 - &#x1F31E; ***Dynamic ensemble pruning***: many could be better than all.
 - &#x1F34E; ***DEPF*** can identify rare cell types and small clusters that would not be picked up by other methods.
@@ -53,7 +55,7 @@ DEPF: Reliable Identification and Interpretation of Single-cell Molecular Hetero
 
 
 ## Getting Started
-<img src="https://github.com/fanyi21/DEPF/blob/main/ModularityOfDEPF.png" alt = "DEPF" style="zoom:100%" align = center />
+<img src="./docs/figure/ModularityOfDEPF.png" alt = "DEPF" style="zoom:100%" align = center />
 
 ## Table of Contents
 
