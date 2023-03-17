@@ -5,9 +5,9 @@ runLouvain.R
 
     The Louvain clustering algorithm is employed to address the non-linear embedding in the latent space to produce multiple underlying cluster results to generate cluster ensemble.
 
-    :Parameters: .. class:: res, default='1'
+    :Parameters: .. class:: res: default='1'
 
-    :Attributes: .. class:: res, resolution
+    :Attributes: .. class:: res: resolution
 
 Example
 -------

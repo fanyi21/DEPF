@@ -50,7 +50,11 @@
 <li class="toctree-l1"><a class="reference internal" href="runHA.R.html">runHA.R</a></li>
 <li class="toctree-l1"><a class="reference internal" href="runLouvain.R.html">runLouvain.R</a></li>
 <li class="toctree-l1"><a class="reference internal" href="runLeiden.R.html">runLeiden.R</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">runSpectral.m</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">runSpectral.m</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#runSpectral"><code class="docutils literal notranslate"><span class="pre">runSpectral()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="runBioFOA.m.html">runBioFOA.m</a></li>
 </ul>
 
@@ -80,6 +84,102 @@
              
   <section id="runspectral-m">
 <h1>runSpectral.m<a class="headerlink" href="#runspectral-m" title="Permalink to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="runSpectral">
+<span class="sig-name descname"><span class="pre">runSpectral</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cluster_K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensemble_num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#runSpectral" title="Permalink to this definition"></a></dt>
+<dd><p class="linemarker linemarker-6">The Spectral clustering algorithm is employed to address the non-linear embedding in the latent space to produce multiple underlying cluster results to generate cluster ensemble.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters 1<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">cluster_K:</span> <span class="pre">default='10'</span></span></dt>
+<dd></dd></dl>
+
+</dd>
+<dt class="field-even">Attributes 1<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">cluster_K:</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">clusters</span></span></dt>
+<dd></dd></dl>
+
+</dd>
+<dt class="field-odd">Parameters 2<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ensemble_num:</span> <span class="pre">default='10'</span></span></dt>
+<dd></dd></dl>
+
+</dd>
+<dt class="field-even">Attributes 2<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ensemble_num:</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">basic</span> <span class="pre">clusterings</span></span></dt>
+<dd></dd></dl>
+
+</dd>
+</dl>
+</dd></dl>
+
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
+<p class="linemarker linemarker-18">example data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a raw scRNA-seq data, goolam.rds, has been stored in the ./scRNAsqData.</span>
+<span class="c1"># https://hemberg-lab.github.io/scRNA.seq.datasets/mouse/edev/#goolam</span>
+<span class="n">da</span> <span class="o">&lt;-</span> <span class="n">readRDS</span><span class="p">(</span><span class="s2">&quot;./scRNAseqData/goolam.rds&quot;</span><span class="p">)</span>
+<span class="n">da</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-26">output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">class</span><span class="p">:</span> <span class="n">SingleCellExperiment</span>
+<span class="n">dim</span><span class="p">:</span> <span class="mi">41428</span> <span class="mi">124</span>
+<span class="n">metadata</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span>
+<span class="n">assays</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span> <span class="n">counts</span> <span class="n">logcounts</span>
+<span class="n">rownames</span><span class="p">(</span><span class="mi">41428</span><span class="p">):</span> <span class="n">ENSMUSG00000000001</span> <span class="n">ENSMUSG00000000003</span> <span class="o">...</span> <span class="n">ERCC</span><span class="o">-</span><span class="mi">00170</span> <span class="n">ERCC</span><span class="o">-</span><span class="mi">00171</span>
+<span class="n">rowData</span> <span class="n">names</span><span class="p">(</span><span class="mi">19</span><span class="p">):</span> <span class="n">is_feature_control</span> <span class="n">is_feature_control_ERCC</span> <span class="o">...</span> <span class="n">feature_symbol</span> <span class="n">feature_id</span>
+<span class="n">colnames</span><span class="p">(</span><span class="mi">124</span><span class="p">):</span> <span class="n">X2cell_1_A</span> <span class="n">X2cell_1_B</span> <span class="o">...</span> <span class="n">ME_4cell_6_C</span> <span class="n">ME_4cell_6_D</span>
+<span class="n">colData</span> <span class="n">names</span><span class="p">(</span><span class="mi">31</span><span class="p">):</span> <span class="n">cell_type1</span> <span class="n">total_features</span> <span class="o">...</span> <span class="n">pct_counts_top_50_features_ERCC</span> <span class="n">is_cell_control</span>
+<span class="n">reducedDimNames</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span>
+<span class="n">mainExpName</span><span class="p">:</span> <span class="n">NULL</span>
+<span class="n">altExpNames</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-41">run <strong>runHA.R</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># activate the environment</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">DEPF</span>
+<span class="n">cd</span> <span class="n">DEPF</span><span class="o">/</span><span class="n">HierarchicalAutoencoder</span><span class="o">/</span>
+<span class="n">Rscript</span> <span class="n">runHA</span><span class="o">.</span><span class="n">R</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-50">output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="s2">&quot;goolam.rds&quot;</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">1</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">2</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">3</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">4</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">5</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">6</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">7</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">8</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">9</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-65">A <strong>9_latent_data</strong> folder is produced and saved in the <strong>./OutputData</strong>.</p>
+<p class="linemarker linemarker-67">run <strong>runSpectral.m</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">BiobjectiveFruitFlyOptimizationAlgorithm</span><span class="o">/</span>
+<span class="n">matlab</span>
+<span class="n">runSpectral</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-74">output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">==========</span><span class="n">run</span> <span class="n">spectral</span> <span class="n">clustering</span><span class="o">.==================</span>
+<span class="mi">10</span>
+
+<span class="n">goolam</span>
+<span class="n">Starting</span> <span class="n">parallel</span> <span class="n">pool</span> <span class="p">(</span><span class="n">parpool</span><span class="p">)</span> <span class="n">using</span> <span class="n">the</span> <span class="s1">&#39;local&#39;</span> <span class="n">profile</span> <span class="n">Connected</span> <span class="n">to</span> <span class="n">the</span> <span class="n">parallel</span> <span class="n">pool</span> <span class="p">(</span><span class="n">number</span> <span class="n">of</span> <span class="n">workers</span><span class="p">:</span> <span class="mi">12</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-84">The <strong>spectral_cluster_K_5.csv</strong> is produced and saved in the <strong>./OutputData</strong>.</p>
+</section>
 </section>
 
 
