@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Description &mdash; DEPF 1.0.0 documentation</title>
+  <title>runHA.R &mdash; DEPF 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -17,8 +17,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Installation" href="Installation.html" />
-    <link rel="prev" title="Welcome to DEPF’s documentation!" href="index.html" /> 
+    <link rel="prev" title="Installation" href="Installation.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -41,8 +40,8 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Description</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Description.html">Description</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
 </ul>
 
@@ -60,9 +59,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Description</li>
+      <li class="breadcrumb-item active">runHA.R</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/Description.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/runHA.R.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -70,32 +69,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="description">
-<h1>Description<a class="headerlink" href="#description" title="Permalink to this heading"></a></h1>
-<figure class="align-center">
-<img alt="DEPF framework" src="_images/ModularityOfDEPF.png" />
-</figure>
-<p class="linemarker linemarker-8">The DEPF package contains four files: <strong>./scRNAseqdata</strong>, <strong>./HierarchicalAutoencoder</strong>, <strong>./BiobjectiveFruitFlyOptimizationAlgorithm</strong>, and <strong>./OutputData</strong>.</p>
-<ul class="simple">
-<li><p class="linemarker linemarker-10"><strong>./scRNAseqdata:</strong> Storing raw scRNA-seq data sets</p></li>
-<li><p class="linemarker linemarker-12"><strong>./HierarchicalAutoencoder:</strong> Storing <em>Normalization module</em>, <em>Hierarchical Autoencoder module</em>, <em>Louvain clustering module</em>, <em>Leiden clustering module</em>.</p></li>
-<li><p class="linemarker linemarker-14"><strong>./BiobjectiveFruitFlyOptimizationAlgorithm:</strong> Storing <em>Spectral clusteirng module</em>, <em>dynamic ensemble pruning mudule</em>.</p></li>
-<li><p class="linemarker linemarker-16"><strong>./OutputData:</strong> Storing latent data, Louvain clustering results, Leiden clustering results, final clustering results, etc.</p></li>
-</ul>
-<p class="linemarker linemarker-18">The operational process of DEPF involves three parts: <strong>RunHA.R</strong>, <strong>runLouvain.R || runLeiden.R || runSpectral.m</strong>, and <strong>runBioFOA.m</strong>.</p>
-<ul class="simple">
-<li><p class="linemarker linemarker-20"><strong>RunHA.R:</strong> Normalizing and mapping the raw -scRNA-seq data yo a low-dimensional latent space.</p></li>
-<li><p class="linemarker linemarker-22"><strong>runLouvain.R || runLeiden.R || runSpectral.m:</strong> Selecting a basic clustering algorithm to generate a clustering ensemble.</p></li>
-<li><p class="linemarker linemarker-24"><strong>runBioFOA.m:</strong> Performing dynamic ensemble pruning.</p></li>
-</ul>
+  <section id="runha-r">
+<h1>runHA.R<a class="headerlink" href="#runha-r" title="Permalink to this heading"></a></h1>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to DEPF’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="Installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

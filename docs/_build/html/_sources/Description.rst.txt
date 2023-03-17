@@ -1,7 +1,9 @@
 Description
 ===========
 
-
+.. figure:: ./figure/ModularityOfDEPF.png
+   :align: center
+   :alt: DEPF framework
 
 The DEPF package contains four files: **./scRNAseqdata**, **./HierarchicalAutoencoder**, **./BiobjectiveFruitFlyOptimizationAlgorithm**, and **./OutputData**.
 

@@ -39,11 +39,12 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Welcome to DEPF’s documentation!</a></li>
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Description.html">Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
 </ul>
-</div>
+
         </div>
       </div>
     </nav>
@@ -71,19 +72,30 @@
   <section id="welcome-to-depf-s-documentation">
 <h1>Welcome to DEPF’s documentation!<a class="headerlink" href="#welcome-to-depf-s-documentation" title="Permalink to this heading"></a></h1>
 <p class="linemarker linemarker-9"><strong>Date:</strong> March 15, 2023. <strong>Version:</strong> 1.0.0</p>
-<p class="linemarker linemarker-11"><strong>paper:</strong> Reliable Identification and Interpretation of Single-cell Molecular Heterogeneity and Transcriptional Regulation using Dynamic Ensemble Pruning</p>
-<p class="linemarker linemarker-13"><strong>Citing Us:</strong> If you find DEPF helpful in your work or research, we would greatly appreciate citations to the following paper</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">put</span> <span class="n">the</span> <span class="n">bib</span> <span class="n">here</span>
-</pre></div>
-</div>
-<p class="linemarker linemarker-17"><strong>DEPF</strong> is constructed based on four modules (<strong>Normalization, Hierarchical Autoencoder, Clustering Ensemble,  Dynamic Ensemble Pruning</strong>) developed by ourselves.</p>
+<p class="linemarker linemarker-11"><strong>Contact:</strong> Thank you for using DEPF! Any questions, suggestions or advices are welcome.
+Email address: <a class="reference external" href="mailto:fanyi21&#37;&#52;&#48;mails&#46;jlu&#46;edu&#46;cn">fanyi21<span>&#64;</span>mails<span>&#46;</span>jlu<span>&#46;</span>edu<span>&#46;</span>cn</a>, <a class="reference external" href="mailto:lixt314&#37;&#52;&#48;jlu&#46;edu&#46;cn">lixt314<span>&#64;</span>jlu<span>&#46;</span>edu<span>&#46;</span>cn</a>.</p>
+<p class="linemarker linemarker-14"><strong>paper:</strong> Reliable Identification and Interpretation of Single-cell Molecular Heterogeneity and Transcriptional Regulation using Dynamic Ensemble Pruning</p>
+<p class="linemarker linemarker-16"><strong>Overview:</strong></p>
+<figure class="align-center">
+<img alt="DEPF framework" src="_images/DEPFframework.png" />
+</figure>
+<p class="linemarker linemarker-22"><strong>DEPF</strong> is constructed based on four modules (<strong>Normalization, Hierarchical Autoencoder, Clustering Ensemble,  Dynamic Ensemble Pruning</strong>) developed by ourselves.</p>
 <ul class="simple">
-<li><p class="linemarker linemarker-19"><strong>Normalization</strong></p></li>
-<li><p class="linemarker linemarker-20"><strong>Hierarchical Autoencoder</strong></p></li>
-<li><p class="linemarker linemarker-21"><strong>Clustering Ensemble</strong></p></li>
-<li><p class="linemarker linemarker-22"><strong>Dynamic Ensemble Pruning</strong></p></li>
+<li><p class="linemarker linemarker-24"><strong>Normalization:</strong> The expression data are rescaled to a range of 0 to 1 for each cell.</p></li>
+<li><p class="linemarker linemarker-25"><strong>Hierarchical Autoencoder:</strong> The Normalized data are mapped to multiple low-dimensional latent spaces.</p></li>
+<li><p class="linemarker linemarker-26"><strong>Clustering Ensemble:</strong> An effective basic clustering algorithm is employed to address the non-linear embedding in the latent space to produce multiple underlying cluster results to generate cluster ensemble.</p></li>
+<li><p class="linemarker linemarker-27"><strong>Dynamic Ensemble Pruning:</strong> The low-quality basic clusterings in the ensemble are dynamically pruned away.</p></li>
 </ul>
 <div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Description.html">Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Installation.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installation.html#enviroments">Enviroments</a></li>
+</ul>
+</li>
+</ul>
 </div>
 </section>
 

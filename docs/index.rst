@@ -32,3 +32,17 @@ Email address: fanyi21@mails.jlu.edu.cn, lixt314@jlu.edu.cn.
    
    ./Description.rst
    ./Installation.rst
+
+.. toctree::
+   :maxdepth: 2
+   :caption: API
+
+   ./runHA.R.rst
+   ./runLouvain.R.rst
+   ./runLeiden.R.rst
+   ./runSpectral.m.rst
+   ./runBioFOA.m.rst
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Examples
