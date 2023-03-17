@@ -21,4 +21,4 @@ The operational process of DEPF involves three parts: ***RunHA.R***, ***runLouva
 
 <img src="./docs/figure/ModularityOfDEPF.png" alt = "DEPF" style="zoom:100%" align = center />
 
-## 
+## Installation
