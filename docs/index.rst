@@ -22,7 +22,7 @@ Email address: fanyi21@mails.jlu.edu.cn, lixt314@jlu.edu.cn.
 **DEPF** is constructed based on four modules (**Normalization, Hierarchical Autoencoder, Clustering Ensemble,  Dynamic Ensemble Pruning**) developed by ourselves.
 
 - **Normalization:** The expression data are rescaled to a range of 0 to 1 for each cell.
-- **Hierarchical Autoencoder:** The Normalized data are mapped to multiple low-dimensional latent spaces.
+- **Hierarchical Autoencoder:** The normalized data are mapped to multiple low-dimensional latent spaces.
 - **Clustering Ensemble:** An effective basic clustering algorithm is employed to address the non-linear embedding in the latent space to produce multiple underlying cluster results to generate cluster ensemble.
 - **Dynamic Ensemble Pruning:** The low-quality basic clusterings in the ensemble are dynamically pruned away.
 
