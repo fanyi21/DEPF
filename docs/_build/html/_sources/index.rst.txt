@@ -46,3 +46,5 @@ Email address: fanyi21@mails.jlu.edu.cn, lixt314@jlu.edu.cn.
 .. toctree::
    :maxdepth: 2
    :caption: Examples
+
+   ./basic_usage.rst

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basic usage workflow &mdash; DEPF 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="runBioFOA.m" href="runBioFOA.m.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            DEPF
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Description.html">Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="runHA.R.html">runHA.R</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runLouvain.R.html">runLouvain.R</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runLeiden.R.html">runLeiden.R</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runSpectral.m.html">runSpectral.m</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runBioFOA.m.html">runBioFOA.m</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">DEPF</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Basic usage workflow</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/basic_usage.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="basic-usage-workflow">
+<h1>Basic usage workflow<a class="headerlink" href="#basic-usage-workflow" title="Permalink to this heading"></a></h1>
+<p class="linemarker linemarker-4">example data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a raw scRNA-seq data, goolam.rds, has been stored in the ./scRNAsqData.</span>
+<span class="c1"># https://hemberg-lab.github.io/scRNA.seq.datasets/mouse/edev/#goolam</span>
+<span class="n">da</span> <span class="o">&lt;-</span> <span class="n">readRDS</span><span class="p">(</span><span class="s2">&quot;./scRNAseqData/goolam.rds&quot;</span><span class="p">)</span>
+<span class="n">da</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-12">output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">class</span><span class="p">:</span> <span class="n">SingleCellExperiment</span>
+<span class="n">dim</span><span class="p">:</span> <span class="mi">41428</span> <span class="mi">124</span>
+<span class="n">metadata</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span>
+<span class="n">assays</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span> <span class="n">counts</span> <span class="n">logcounts</span>
+<span class="n">rownames</span><span class="p">(</span><span class="mi">41428</span><span class="p">):</span> <span class="n">ENSMUSG00000000001</span> <span class="n">ENSMUSG00000000003</span> <span class="o">...</span> <span class="n">ERCC</span><span class="o">-</span><span class="mi">00170</span> <span class="n">ERCC</span><span class="o">-</span><span class="mi">00171</span>
+<span class="n">rowData</span> <span class="n">names</span><span class="p">(</span><span class="mi">19</span><span class="p">):</span> <span class="n">is_feature_control</span> <span class="n">is_feature_control_ERCC</span> <span class="o">...</span> <span class="n">feature_symbol</span> <span class="n">feature_id</span>
+<span class="n">colnames</span><span class="p">(</span><span class="mi">124</span><span class="p">):</span> <span class="n">X2cell_1_A</span> <span class="n">X2cell_1_B</span> <span class="o">...</span> <span class="n">ME_4cell_6_C</span> <span class="n">ME_4cell_6_D</span>
+<span class="n">colData</span> <span class="n">names</span><span class="p">(</span><span class="mi">31</span><span class="p">):</span> <span class="n">cell_type1</span> <span class="n">total_features</span> <span class="o">...</span> <span class="n">pct_counts_top_50_features_ERCC</span> <span class="n">is_cell_control</span>
+<span class="n">reducedDimNames</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span>
+<span class="n">mainExpName</span><span class="p">:</span> <span class="n">NULL</span>
+<span class="n">altExpNames</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-27"><strong>Step 1</strong>: Normalizing and mapping the raw scRNA-seq data to multiple low-dimensional latent spaces. A <strong>9_latent_data</strong> folder is produced and saved in the <strong>*./OutputData*</strong>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># activate the environment</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">DEPF</span>
+<span class="n">cd</span> <span class="n">DEPF</span><span class="o">/</span><span class="n">HierarchicalAutoencoder</span><span class="o">/</span>
+<span class="n">Rscript</span> <span class="n">runHA</span><span class="o">.</span><span class="n">R</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-36">output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="s2">&quot;goolam.rds&quot;</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">1</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">2</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">3</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">4</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">5</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">6</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">7</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">8</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">9</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-52"><strong>Step 2</strong>: Selecting a basic clustering algorithm to generate a clustering ensemble. DEPF provides three basic clustering algorithms, including <strong>Louvain</strong>, <strong>Leiden</strong>, and <strong>spectral clustering</strong>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">BiobjectiveFruitFlyOptimizationAlgorithm</span><span class="o">/</span>
+<span class="n">matlab</span>
+<span class="n">runSpectral</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-59">output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">==========</span><span class="n">run</span> <span class="n">spectral</span> <span class="n">clustering</span><span class="o">.==================</span>
+<span class="mi">10</span>
+
+<span class="n">goolam</span>
+<span class="n">Starting</span> <span class="n">parallel</span> <span class="n">pool</span> <span class="p">(</span><span class="n">parpool</span><span class="p">)</span> <span class="n">using</span> <span class="n">the</span> <span class="s1">&#39;local&#39;</span> <span class="n">profile</span> <span class="n">Connected</span> <span class="n">to</span> <span class="n">the</span> <span class="n">parallel</span> <span class="n">pool</span> <span class="p">(</span><span class="n">number</span> <span class="n">of</span> <span class="n">workers</span><span class="p">:</span> <span class="mi">12</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-69">The <strong>spectral_cluster_K_5.csv</strong> is produced and saved in the <strong>./OutputData</strong>.</p>
+<p class="linemarker linemarker-71"><strong>Step 3</strong>: Performing dynamic ensemble pruning. The <strong>final_clustering.csv</strong> is produced and saved in the <strong>./OutputData</strong>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">runBioFOA</span><span class="p">(</span><span class="s2">&quot;spectral&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-78">output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">==========</span><span class="n">run</span> <span class="n">Ensemble</span> <span class="n">Pruning</span><span class="o">.==================</span>
+<span class="n">goolam</span>
+<span class="o">==========</span><span class="n">load</span> <span class="n">spectral</span> <span class="n">ensemble</span><span class="o">=================</span>
+<span class="o">=========</span>  <span class="n">NMI</span>  <span class="o">==========</span>
+<span class="mf">0.8900</span>
+<span class="o">=========</span>  <span class="n">ARI</span>  <span class="o">==========</span>
+<span class="mf">0.9100</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="runBioFOA.m.html" class="btn btn-neutral float-left" title="runBioFOA.m" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, fanyi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
