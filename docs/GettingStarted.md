@@ -1,4 +1,4 @@
-## About Package
+## Description
 
 The DEPF package contains four files: ***./scRNAseqdata***, ***./HierarchicalAutoencoder***, ***./BiobjectiveFruitFlyOptimizationAlgorithm***, and ***./OutputData**.
 
