@@ -1,21 +1,52 @@
 Installation
 =============
 
-It is recommended to use **git** for installation.  
+Prerequisites
+~~~~~~~~~~~~~
+The following packages are requirements:
 
-.. code-block:: sh
-    
+- ``r-base=4.1.3``
+- ``python=3.9``
+- ``MATLAB2019b``
+
+
+Installation
+~~~~~~~~~~~~
+
+- It is recommended to use **conda** for installation.  
+
+::
+
     # create a virtual environment named DEPF
-    conda create -n DEPF    
+    conda create -n DEPF   
     # activate the environment       
     conda activate DEPF   
-    # install R enviroment
+
+- **python** enviroment:
+
+::
+
+    conda install python=3.9
+    pip install leidenalg
+
+- **R** enviroment:
+
+::
+
     conda install -c conda-forge r-base=4.1.3
     conda install -c conda-forge r-devtools
     conda install -c conda-forge r-seurat
-    conda install python=3.9
-    pip install leidenalg
-    # install MATLAB according to the official website tutorial
+
+- **MATLAB** enviroment:
+
+::
+
+    Following the official website tutorial: https://ww2.mathworks.cn/downloads/.
+
+- **DEPF** package and dependencies:
+  
+::
+
     # clone DEPF repository                  
     git clone https://github.com/fanyi21/DEPF.git
     # # install the dependencies
