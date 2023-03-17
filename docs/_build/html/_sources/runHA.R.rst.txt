@@ -34,7 +34,7 @@ output:
     mainExpName: NULL
     altExpNames(0)
 
-run **runHA.R**
+run **runHA.R**:
 
 ::
 
