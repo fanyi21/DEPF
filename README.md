@@ -81,7 +81,7 @@ $ cd DEPF/DEPF/HierarchicalAutoencoder/
 $ Rscript RequirePackage.R
 ```
 ### Example
- &#x1F341; ***Step 1***: Normalizing and mapping the raw scRNA-seq data to a low-dimensional latent space. A ***9_latent_data*** folder is produced and saved in the ***./OutputData***.
+ &#x1F341; ***Step 1***: Normalizing and mapping the raw scRNA-seq data to multiple low-dimensional latent spaces. A ***9_latent_data*** folder is produced and saved in the ***./OutputData***.
 ```shell
 $ cd DEPF/HierarchicalAutoencoder/
 $ Rscript runHA.R
