@@ -1,6 +1,10 @@
 Description
 ===========
 
+.. figure:: ./figure/ModularityOfDEPF.png
+   :align: center
+   :alt: DEPF framework
+
 The DEPF package contains four files: **./scRNAseqdata**, **./HierarchicalAutoencoder**, **./BiobjectiveFruitFlyOptimizationAlgorithm**, and **./OutputData**.
 
 - **./scRNAseqdata:** Storing raw scRNA-seq data sets
@@ -18,7 +22,3 @@ The operational process of DEPF involves three parts: **RunHA.R**, **runLouvain.
 - **runLouvain.R || runLeiden.R || runSpectral.m:** Selecting a basic clustering algorithm to generate a clustering ensemble.
 
 - **runBioFOA.m:** Performing dynamic ensemble pruning.
-
-.. figure:: ./figure/ModularityOfDEPF.png
-   :align: center
-   :alt: DEPF framework

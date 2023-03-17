@@ -16,7 +16,8 @@
         <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Description" href="Description.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -69,12 +70,33 @@
              
   <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
+<p class="linemarker linemarker-4">It is recommended to use <strong>git</strong> for installation.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a virtual environment named DEPF</span>
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>DEPF
+<span class="c1"># activate the environment</span>
+conda<span class="w"> </span>activate<span class="w"> </span>DEPF
+<span class="c1"># install R enviroment</span>
+conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>r-base<span class="o">=</span><span class="m">4</span>.1.3
+conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>r-devtools
+conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>r-seurat
+conda<span class="w"> </span>install<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
+pip<span class="w"> </span>install<span class="w"> </span>leidenalg
+<span class="c1"># install MATLAB according to the official website tutorial</span>
+<span class="c1"># clone DEPF repository</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/fanyi21/DEPF.git
+<span class="c1"># # install the dependencies</span>
+<span class="nb">cd</span><span class="w"> </span>DEPF/DEPF/HierarchicalAutoencoder/
+Rscript<span class="w"> </span>RequirePackage.R
+</pre></div>
+</div>
 </section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Description.html" class="btn btn-neutral float-left" title="Description" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 

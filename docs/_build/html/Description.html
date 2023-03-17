@@ -17,6 +17,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="Installation.html" />
     <link rel="prev" title="Welcome to DEPF’s documentation!" href="index.html" /> 
 </head>
 
@@ -70,22 +71,19 @@
              
   <section id="description">
 <h1>Description<a class="headerlink" href="#description" title="Permalink to this heading"></a></h1>
-<p class="linemarker linemarker-4">The DEPF package contains four files: <strong>./scRNAseqdata</strong>, <strong>./HierarchicalAutoencoder</strong>, <strong>./BiobjectiveFruitFlyOptimizationAlgorithm</strong>, and <strong>./OutputData</strong>.</p>
+<p class="linemarker linemarker-6">The DEPF package contains four files: <strong>./scRNAseqdata</strong>, <strong>./HierarchicalAutoencoder</strong>, <strong>./BiobjectiveFruitFlyOptimizationAlgorithm</strong>, and <strong>./OutputData</strong>.</p>
 <ul class="simple">
-<li><p class="linemarker linemarker-6"><strong>./scRNAseqdata:</strong> Storing raw scRNA-seq data sets</p></li>
-<li><p class="linemarker linemarker-8"><strong>./HierarchicalAutoencoder:</strong> Storing <em>Normalization module</em>, <em>Hierarchical Autoencoder module</em>, <em>Louvain clustering module</em>, <em>Leiden clustering module</em>.</p></li>
-<li><p class="linemarker linemarker-10"><strong>./BiobjectiveFruitFlyOptimizationAlgorithm:</strong> Storing <em>Spectral clusteirng module</em>, <em>dynamic ensemble pruning mudule</em>.</p></li>
-<li><p class="linemarker linemarker-12"><strong>./OutputData:</strong> Storing latent data, Louvain clustering results, Leiden clustering results, final clustering results, etc.</p></li>
+<li><p class="linemarker linemarker-8"><strong>./scRNAseqdata:</strong> Storing raw scRNA-seq data sets</p></li>
+<li><p class="linemarker linemarker-10"><strong>./HierarchicalAutoencoder:</strong> Storing <em>Normalization module</em>, <em>Hierarchical Autoencoder module</em>, <em>Louvain clustering module</em>, <em>Leiden clustering module</em>.</p></li>
+<li><p class="linemarker linemarker-12"><strong>./BiobjectiveFruitFlyOptimizationAlgorithm:</strong> Storing <em>Spectral clusteirng module</em>, <em>dynamic ensemble pruning mudule</em>.</p></li>
+<li><p class="linemarker linemarker-14"><strong>./OutputData:</strong> Storing latent data, Louvain clustering results, Leiden clustering results, final clustering results, etc.</p></li>
 </ul>
-<p class="linemarker linemarker-14">The operational process of DEPF involves three parts: <strong>RunHA.R</strong>, <strong>runLouvain.R || runLeiden.R || runSpectral.m</strong>, and <strong>runBioFOA.m</strong>.</p>
+<p class="linemarker linemarker-16">The operational process of DEPF involves three parts: <strong>RunHA.R</strong>, <strong>runLouvain.R || runLeiden.R || runSpectral.m</strong>, and <strong>runBioFOA.m</strong>.</p>
 <ul class="simple">
-<li><p class="linemarker linemarker-16"><strong>RunHA.R:</strong> Normalizing and mapping the raw -scRNA-seq data yo a low-dimensional latent space.</p></li>
-<li><p class="linemarker linemarker-18"><strong>runLouvain.R || runLeiden.R || runSpectral.m:</strong> Selecting a basic clustering algorithm to generate a clustering ensemble.</p></li>
-<li><p class="linemarker linemarker-20"><strong>runBioFOA.m:</strong> Performing dynamic ensemble pruning.</p></li>
+<li><p class="linemarker linemarker-18"><strong>RunHA.R:</strong> Normalizing and mapping the raw -scRNA-seq data yo a low-dimensional latent space.</p></li>
+<li><p class="linemarker linemarker-20"><strong>runLouvain.R || runLeiden.R || runSpectral.m:</strong> Selecting a basic clustering algorithm to generate a clustering ensemble.</p></li>
+<li><p class="linemarker linemarker-22"><strong>runBioFOA.m:</strong> Performing dynamic ensemble pruning.</p></li>
 </ul>
-<figure class="align-center">
-<img alt="DEPF framework" src="_images/ModularityOfDEPF.png" />
-</figure>
 </section>
 
 
@@ -93,6 +91,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="Welcome to DEPF’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
