@@ -8,11 +8,12 @@ Welcome to DEPF's documentation!
 
 **Date:** March 15, 2023. **Version:** 1.0.0
 
+**Contact:** Thank you for using DEPF! Any questions, suggestions or advices are welcome.
+**Email address:** fanyi21@mails.jlu.edu.cn, lixt314@jlu.edu.cn.
+
 **paper:** Reliable Identification and Interpretation of Single-cell Molecular Heterogeneity and Transcriptional Regulation using Dynamic Ensemble Pruning
 
-**Citing Us:** If you find DEPF helpful in your work or research, we would greatly appreciate citations to the following paper
-::
-   put the bib here
+**Overview:**
 
 .. figure:: ./figure/DEPFframework.png
    :align: center
