@@ -30,4 +30,5 @@ Email address: fanyi21@mails.jlu.edu.cn, lixt314@jlu.edu.cn.
    :maxdepth: 2
    :caption: Getting Started
    
-   ./GettingStarted.md
+   ./Description.rst
+   ./Installation.rst
