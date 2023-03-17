@@ -65,7 +65,7 @@ run **runLeiden.R**:
 ::
 
     R
-    source("runLleiden.R")
+    source("runLeiden.R")
     runLeiden(res=1)
 
 output:
