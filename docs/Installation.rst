@@ -2,7 +2,8 @@ Installation
 =============
 
 Prerequisites
-~~~~~~~~~~~~~
+-------------
+
 The following packages are requirements:
 
 - ``r-base=4.1.3``
@@ -10,8 +11,8 @@ The following packages are requirements:
 - ``MATLAB2019b``
 
 
-Installation
-~~~~~~~~~~~~
+Enviroments
+------------
 
 - It is recommended to use **conda** for installation.  
 
@@ -43,7 +44,7 @@ Installation
 
     Following the official website tutorial: https://ww2.mathworks.cn/downloads/.
 
-- **DEPF** package and dependencies:
+- **DEPF** dependencies:
   
 ::
 
