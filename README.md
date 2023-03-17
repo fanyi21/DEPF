@@ -31,13 +31,13 @@ DEPF: Reliable Identification and Interpretation of Single-cell Molecular Hetero
 </p>
 
 
-**Release: 
-  <a href="https://github.com/fanyi21/DEPF/tree/main/DEPF">Source</a> |
-  <a href=""> Changelog </a>  
+Release: 
+  <a href="https://github.com/fanyi21/DEPF/tree/main/DEPF">Source</a>
+  
   Links:
-  <a href="https://github.com/fanyi21/DEPF#Modularity of DEPF">Getting Started</a> |
+  <a href="https://depf.readthedocs.io/en/latest/Description.html">Getting Started</a> |
   <a href="https://depf.readthedocs.io/en/latest/">API Reference</a> |
-  <a href="https://depf.readthedocs.io/en/latest/">Examples</a>**
+  <a href="https://depf.readthedocs.io/en/latest/">Examples</a>
   
 
 
