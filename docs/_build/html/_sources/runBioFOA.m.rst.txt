@@ -20,7 +20,6 @@ runBioFOA.m
 Example
 -------
 
-
 run **runBioFOA.m**
 
 ::

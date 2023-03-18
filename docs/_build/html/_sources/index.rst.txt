@@ -49,5 +49,5 @@ Email address: fanyi21@mails.jlu.edu.cn, lixt314@jlu.edu.cn.
 
    ./Spectral_usage.rst
    ./Leiden_usage.rst
-   ./Louvain_usge.rst
+   ./Louvain_usage.rst
 
