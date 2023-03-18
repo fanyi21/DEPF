@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>&lt;no title&gt; &mdash; DEPF 1.0.0 documentation</title>
+  <title>Louvain usage workflow &mdash; DEPF 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -66,7 +66,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">&lt;no title&gt;</li>
+      <li class="breadcrumb-item active">Louvain usage workflow</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/Louvain_usage.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -76,7 +76,123 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <p class="linemarker linemarker-1"><a href="#id1"><span class="problematic" id="id2">``</span></a></p>
+  <section id="louvain-usage-workflow">
+<h1>Louvain usage workflow<a class="headerlink" href="#louvain-usage-workflow" title="Permalink to this heading"></a></h1>
+<p class="linemarker linemarker-4">example data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a raw scRNA-seq data, goolam.rds, has been stored in the ./scRNAsqData.</span>
+<span class="c1"># https://hemberg-lab.github.io/scRNA.seq.datasets/mouse/edev/#goolam</span>
+<span class="n">da</span> <span class="o">&lt;-</span> <span class="n">readRDS</span><span class="p">(</span><span class="s2">&quot;./scRNAseqData/goolam.rds&quot;</span><span class="p">)</span>
+<span class="n">da</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-12">output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">class</span><span class="p">:</span> <span class="n">SingleCellExperiment</span>
+<span class="n">dim</span><span class="p">:</span> <span class="mi">41428</span> <span class="mi">124</span>
+<span class="n">metadata</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span>
+<span class="n">assays</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span> <span class="n">counts</span> <span class="n">logcounts</span>
+<span class="n">rownames</span><span class="p">(</span><span class="mi">41428</span><span class="p">):</span> <span class="n">ENSMUSG00000000001</span> <span class="n">ENSMUSG00000000003</span> <span class="o">...</span> <span class="n">ERCC</span><span class="o">-</span><span class="mi">00170</span> <span class="n">ERCC</span><span class="o">-</span><span class="mi">00171</span>
+<span class="n">rowData</span> <span class="n">names</span><span class="p">(</span><span class="mi">19</span><span class="p">):</span> <span class="n">is_feature_control</span> <span class="n">is_feature_control_ERCC</span> <span class="o">...</span> <span class="n">feature_symbol</span> <span class="n">feature_id</span>
+<span class="n">colnames</span><span class="p">(</span><span class="mi">124</span><span class="p">):</span> <span class="n">X2cell_1_A</span> <span class="n">X2cell_1_B</span> <span class="o">...</span> <span class="n">ME_4cell_6_C</span> <span class="n">ME_4cell_6_D</span>
+<span class="n">colData</span> <span class="n">names</span><span class="p">(</span><span class="mi">31</span><span class="p">):</span> <span class="n">cell_type1</span> <span class="n">total_features</span> <span class="o">...</span> <span class="n">pct_counts_top_50_features_ERCC</span> <span class="n">is_cell_control</span>
+<span class="n">reducedDimNames</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span>
+<span class="n">mainExpName</span><span class="p">:</span> <span class="n">NULL</span>
+<span class="n">altExpNames</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-27"><strong>Step 1</strong>: Normalizing and mapping the raw scRNA-seq data to multiple low-dimensional latent spaces. A <strong>9_latent_data</strong> folder is produced and saved in the <strong>*./OutputData*</strong>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># activate the environment</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">DEPF</span>
+<span class="n">cd</span> <span class="n">DEPF</span><span class="o">/</span><span class="n">HierarchicalAutoencoder</span><span class="o">/</span>
+<span class="n">Rscript</span> <span class="n">runHA</span><span class="o">.</span><span class="n">R</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-36">output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="s2">&quot;goolam.rds&quot;</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">1</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">2</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">3</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">4</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">5</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">6</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">7</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">8</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">9</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-52"><strong>Step 2</strong>: Selecting <strong>Louvain</strong> to generate a clustering ensemble.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">R</span>
+<span class="n">source</span><span class="p">(</span><span class="s2">&quot;runLouvain.R&quot;</span><span class="p">)</span>
+<span class="n">runLouvain</span><span class="p">(</span><span class="n">res</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-59">output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">**********************************************</span> <span class="o">.</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">1</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+<span class="o">**********************************************</span> <span class="o">.</span>
+<span class="o">----------------------------------------------</span> <span class="o">.</span>
+<span class="n">resolution</span><span class="p">:</span>  <span class="mi">1</span> <span class="o">.</span>
+<span class="o">----------------------------------------------</span> <span class="o">.</span>
+<span class="n">Computing</span> <span class="n">nearest</span> <span class="n">neighbor</span> <span class="n">graph</span>
+<span class="n">Computing</span> <span class="n">SNN</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="s2">&quot;============  Louvain   ============&quot;</span>
+<span class="n">Modularity</span> <span class="n">Optimizer</span> <span class="n">version</span> <span class="mf">1.3.0</span> <span class="n">by</span> <span class="n">Ludo</span> <span class="n">Waltman</span> <span class="ow">and</span> <span class="n">Nees</span> <span class="n">Jan</span> <span class="n">van</span> <span class="n">Eck</span>
+
+<span class="n">Number</span> <span class="n">of</span> <span class="n">nodes</span><span class="p">:</span> <span class="mi">124</span>
+<span class="n">Number</span> <span class="n">of</span> <span class="n">edges</span><span class="p">:</span> <span class="mi">4005</span>
+
+<span class="n">Running</span> <span class="n">Louvain</span> <span class="n">algorithm</span><span class="o">...</span>
+<span class="mi">0</span><span class="o">%</span>   <span class="mi">10</span>   <span class="mi">20</span>   <span class="mi">30</span>   <span class="mi">40</span>   <span class="mi">50</span>   <span class="mi">60</span>   <span class="mi">70</span>   <span class="mi">80</span>   <span class="mi">90</span>   <span class="mi">100</span><span class="o">%</span>
+<span class="p">[</span><span class="o">----|----|----|----|----|----|----|----|----|----|</span>
+<span class="o">**************************************************|</span>
+<span class="n">Maximum</span> <span class="n">modularity</span> <span class="ow">in</span> <span class="mi">10</span> <span class="n">random</span> <span class="n">starts</span><span class="p">:</span> <span class="mf">0.4066</span>
+<span class="n">Number</span> <span class="n">of</span> <span class="n">communities</span><span class="p">:</span> <span class="mi">4</span>
+<span class="n">Elapsed</span> <span class="n">time</span><span class="p">:</span> <span class="mi">0</span> <span class="n">seconds</span>
+
+<span class="o">...</span>
+<span class="o">...</span>
+<span class="o">...</span>
+<span class="o">**********************************************</span> <span class="o">.</span>
+<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">9</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
+<span class="o">**********************************************</span> <span class="o">.</span>
+<span class="o">----------------------------------------------</span> <span class="o">.</span>
+<span class="n">resolution</span><span class="p">:</span>  <span class="mi">1</span> <span class="o">.</span>
+<span class="o">----------------------------------------------</span> <span class="o">.</span>
+<span class="n">Computing</span> <span class="n">nearest</span> <span class="n">neighbor</span> <span class="n">graph</span>
+<span class="n">Computing</span> <span class="n">SNN</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="s2">&quot;============  Louvain   ============&quot;</span>
+<span class="n">Modularity</span> <span class="n">Optimizer</span> <span class="n">version</span> <span class="mf">1.3.0</span> <span class="n">by</span> <span class="n">Ludo</span> <span class="n">Waltman</span> <span class="ow">and</span> <span class="n">Nees</span> <span class="n">Jan</span> <span class="n">van</span> <span class="n">Eck</span>
+
+<span class="n">Number</span> <span class="n">of</span> <span class="n">nodes</span><span class="p">:</span> <span class="mi">124</span>
+<span class="n">Number</span> <span class="n">of</span> <span class="n">edges</span><span class="p">:</span> <span class="mi">4005</span>
+
+<span class="n">Running</span> <span class="n">Louvain</span> <span class="n">algorithm</span><span class="o">...</span>
+<span class="mi">0</span><span class="o">%</span>   <span class="mi">10</span>   <span class="mi">20</span>   <span class="mi">30</span>   <span class="mi">40</span>   <span class="mi">50</span>   <span class="mi">60</span>   <span class="mi">70</span>   <span class="mi">80</span>   <span class="mi">90</span>   <span class="mi">100</span><span class="o">%</span>
+<span class="p">[</span><span class="o">----|----|----|----|----|----|----|----|----|----|</span>
+<span class="o">**************************************************|</span>
+<span class="n">Maximum</span> <span class="n">modularity</span> <span class="ow">in</span> <span class="mi">10</span> <span class="n">random</span> <span class="n">starts</span><span class="p">:</span> <span class="mf">0.4066</span>
+<span class="n">Number</span> <span class="n">of</span> <span class="n">communities</span><span class="p">:</span> <span class="mi">4</span>
+<span class="n">Elapsed</span> <span class="n">time</span><span class="p">:</span> <span class="mi">0</span> <span class="n">seconds</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-111">The <strong>Louvain_resolution_1.csv</strong> is produced and saved in the <strong>./OutputData</strong>.</p>
+<p class="linemarker linemarker-113"><strong>Step 3</strong>: Performing dynamic ensemble pruning. The <strong>final_clustering.csv</strong> is produced and saved in the <strong>./OutputData</strong>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">runBioFOA</span><span class="p">(</span><span class="s2">&quot;Louvain&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-120">output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">==========</span><span class="n">run</span> <span class="n">Ensemble</span> <span class="n">Pruning</span><span class="o">.==================</span>
+<span class="n">goolam</span>
+<span class="n">Starting</span> <span class="n">parallel</span> <span class="n">pool</span> <span class="p">(</span><span class="n">parpool</span><span class="p">)</span> <span class="n">using</span> <span class="n">the</span> <span class="s1">&#39;local&#39;</span> <span class="n">profile</span> <span class="o">...</span>
+<span class="n">Connected</span> <span class="n">to</span> <span class="n">the</span> <span class="n">parallel</span> <span class="n">pool</span> <span class="p">(</span><span class="n">number</span> <span class="n">of</span> <span class="n">workers</span><span class="p">:</span> <span class="mi">12</span><span class="p">)</span><span class="o">.</span>
+<span class="o">===========</span><span class="n">load</span> <span class="n">Louvain</span> <span class="n">ensemble</span><span class="o">=================</span>
+<span class="o">=========</span>  <span class="n">NMI</span>  <span class="o">==========</span>
+    <span class="mf">0.7900</span>
+
+<span class="o">=========</span>  <span class="n">ARI</span>  <span class="o">==========</span>
+    <span class="mf">0.6400</span>
+</pre></div>
+</div>
+</section>
 
 
            </div>

@@ -49,7 +49,7 @@ output:
     output 9 of  9  latent:  goolam .
 
 
-**Step 2**: Selecting a basic clustering algorithm to generate a clustering ensemble. DEPF provides three basic clustering algorithms, including **Louvain**, **Leiden**, and **spectral clustering**.
+**Step 2**: Selecting **spectral clustering algorithm** to generate a clustering ensemble.
 ::
 
     cd BiobjectiveFruitFlyOptimizationAlgorithm/ 
