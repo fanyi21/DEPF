@@ -11,13 +11,13 @@ The DEPF package contains four files: **./scRNAseqdata**, **./HierarchicalAutoen
 
 - **./HierarchicalAutoencoder:** Storing *Normalization module*, *Hierarchical Autoencoder module*, *Louvain clustering module*, *Leiden clustering module*.
 
-- **./BiobjectiveFruitFlyOptimizationAlgorithm:** Storing *Spectral clusteirng module*, *dynamic ensemble pruning mudule*.
+- **./BiobjectiveFruitFlyOptimizationAlgorithm:** Storing *Spectral clustering module*, *dynamic ensemble pruning mudule*.
 
 - **./OutputData:** Storing latent data, Louvain clustering results, Leiden clustering results, final clustering results, etc.
 
 The operational process of DEPF involves three parts: **RunHA.R**, **runLouvain.R || runLeiden.R || runSpectral.m**, and **runBioFOA.m**.
 
-- **RunHA.R:** Normalizing and mapping the raw -scRNA-seq data yo a low-dimensional latent space.
+- **RunHA.R:** Normalizing and mapping the raw -scRNA-seq data to a low-dimensional latent space.
 
 - **runLouvain.R || runLeiden.R || runSpectral.m:** Selecting a basic clustering algorithm to generate a clustering ensemble.
 

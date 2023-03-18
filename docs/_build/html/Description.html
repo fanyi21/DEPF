@@ -92,12 +92,12 @@
 <ul class="simple">
 <li><p class="linemarker linemarker-10"><strong>./scRNAseqdata:</strong> Storing raw scRNA-seq data sets</p></li>
 <li><p class="linemarker linemarker-12"><strong>./HierarchicalAutoencoder:</strong> Storing <em>Normalization module</em>, <em>Hierarchical Autoencoder module</em>, <em>Louvain clustering module</em>, <em>Leiden clustering module</em>.</p></li>
-<li><p class="linemarker linemarker-14"><strong>./BiobjectiveFruitFlyOptimizationAlgorithm:</strong> Storing <em>Spectral clusteirng module</em>, <em>dynamic ensemble pruning mudule</em>.</p></li>
+<li><p class="linemarker linemarker-14"><strong>./BiobjectiveFruitFlyOptimizationAlgorithm:</strong> Storing <em>Spectral clustering module</em>, <em>dynamic ensemble pruning mudule</em>.</p></li>
 <li><p class="linemarker linemarker-16"><strong>./OutputData:</strong> Storing latent data, Louvain clustering results, Leiden clustering results, final clustering results, etc.</p></li>
 </ul>
 <p class="linemarker linemarker-18">The operational process of DEPF involves three parts: <strong>RunHA.R</strong>, <strong>runLouvain.R || runLeiden.R || runSpectral.m</strong>, and <strong>runBioFOA.m</strong>.</p>
 <ul class="simple">
-<li><p class="linemarker linemarker-20"><strong>RunHA.R:</strong> Normalizing and mapping the raw -scRNA-seq data yo a low-dimensional latent space.</p></li>
+<li><p class="linemarker linemarker-20"><strong>RunHA.R:</strong> Normalizing and mapping the raw -scRNA-seq data to a low-dimensional latent space.</p></li>
 <li><p class="linemarker linemarker-22"><strong>runLouvain.R || runLeiden.R || runSpectral.m:</strong> Selecting a basic clustering algorithm to generate a clustering ensemble.</p></li>
 <li><p class="linemarker linemarker-24"><strong>runBioFOA.m:</strong> Performing dynamic ensemble pruning.</p></li>
 </ul>
