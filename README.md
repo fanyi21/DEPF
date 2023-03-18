@@ -116,7 +116,7 @@ runBioFOA("spectral", 10, 1)
 NMI: 0.8900
 ARI: 0.9100
 ```
-> **Note: `DEPF` is still under development, please see [API reference](https://depf.readthedocs.io/en/latest/) for the latest list.**
+> **Note: `DEPF` is still under development, please see [API reference](https://depf.readthedocs.io/en/latest/runHA.R.html#) for the latest list.**
 
 ## Contact:
 Thank you for using DEPF! Any questions, suggestions or advices are welcome.
