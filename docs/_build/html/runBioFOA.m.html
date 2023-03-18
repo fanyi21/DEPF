@@ -17,6 +17,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Basic usage workflow" href="Spectral_usage.html" />
     <link rel="prev" title="runSpectral.m" href="runSpectral.m.html" /> 
 </head>
 
@@ -135,68 +136,11 @@
 
 <section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
-<p class="linemarker linemarker-22">example data:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a raw scRNA-seq data, goolam.rds, has been stored in the ./scRNAsqData.</span>
-<span class="c1"># https://hemberg-lab.github.io/scRNA.seq.datasets/mouse/edev/#goolam</span>
-<span class="n">da</span> <span class="o">&lt;-</span> <span class="n">readRDS</span><span class="p">(</span><span class="s2">&quot;./scRNAseqData/goolam.rds&quot;</span><span class="p">)</span>
-<span class="n">da</span>
-</pre></div>
-</div>
-<p class="linemarker linemarker-30">output:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">class</span><span class="p">:</span> <span class="n">SingleCellExperiment</span>
-<span class="n">dim</span><span class="p">:</span> <span class="mi">41428</span> <span class="mi">124</span>
-<span class="n">metadata</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span>
-<span class="n">assays</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span> <span class="n">counts</span> <span class="n">logcounts</span>
-<span class="n">rownames</span><span class="p">(</span><span class="mi">41428</span><span class="p">):</span> <span class="n">ENSMUSG00000000001</span> <span class="n">ENSMUSG00000000003</span> <span class="o">...</span> <span class="n">ERCC</span><span class="o">-</span><span class="mi">00170</span> <span class="n">ERCC</span><span class="o">-</span><span class="mi">00171</span>
-<span class="n">rowData</span> <span class="n">names</span><span class="p">(</span><span class="mi">19</span><span class="p">):</span> <span class="n">is_feature_control</span> <span class="n">is_feature_control_ERCC</span> <span class="o">...</span> <span class="n">feature_symbol</span> <span class="n">feature_id</span>
-<span class="n">colnames</span><span class="p">(</span><span class="mi">124</span><span class="p">):</span> <span class="n">X2cell_1_A</span> <span class="n">X2cell_1_B</span> <span class="o">...</span> <span class="n">ME_4cell_6_C</span> <span class="n">ME_4cell_6_D</span>
-<span class="n">colData</span> <span class="n">names</span><span class="p">(</span><span class="mi">31</span><span class="p">):</span> <span class="n">cell_type1</span> <span class="n">total_features</span> <span class="o">...</span> <span class="n">pct_counts_top_50_features_ERCC</span> <span class="n">is_cell_control</span>
-<span class="n">reducedDimNames</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span>
-<span class="n">mainExpName</span><span class="p">:</span> <span class="n">NULL</span>
-<span class="n">altExpNames</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-<p class="linemarker linemarker-45">run <strong>runHA.R</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># activate the environment</span>
-<span class="n">conda</span> <span class="n">activate</span> <span class="n">DEPF</span>
-<span class="n">cd</span> <span class="n">DEPF</span><span class="o">/</span><span class="n">HierarchicalAutoencoder</span><span class="o">/</span>
-<span class="n">Rscript</span> <span class="n">runHA</span><span class="o">.</span><span class="n">R</span>
-</pre></div>
-</div>
-<p class="linemarker linemarker-54">output:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="s2">&quot;goolam.rds&quot;</span>
-<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">1</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
-<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">2</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
-<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">3</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
-<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">4</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
-<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">5</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
-<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">6</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
-<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">7</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
-<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">8</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
-<span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">9</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
-</pre></div>
-</div>
-<p class="linemarker linemarker-69">A <strong>9_latent_data</strong> folder is produced and saved in the <strong>./OutputData</strong>.</p>
-<p class="linemarker linemarker-71">run <strong>runSpectral.m</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">BiobjectiveFruitFlyOptimizationAlgorithm</span><span class="o">/</span>
-<span class="n">matlab</span>
-<span class="n">runSpectral</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-<p class="linemarker linemarker-78">output:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">==========</span><span class="n">run</span> <span class="n">spectral</span> <span class="n">clustering</span><span class="o">.==================</span>
-<span class="mi">10</span>
-
-<span class="n">goolam</span>
-<span class="n">Starting</span> <span class="n">parallel</span> <span class="n">pool</span> <span class="p">(</span><span class="n">parpool</span><span class="p">)</span> <span class="n">using</span> <span class="n">the</span> <span class="s1">&#39;local&#39;</span> <span class="n">profile</span> <span class="n">Connected</span> <span class="n">to</span> <span class="n">the</span> <span class="n">parallel</span> <span class="n">pool</span> <span class="p">(</span><span class="n">number</span> <span class="n">of</span> <span class="n">workers</span><span class="p">:</span> <span class="mi">12</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
-</div>
-<p class="linemarker linemarker-88">The <strong>spectral_cluster_K_5.csv</strong> is produced and saved in the <strong>./OutputData</strong>.</p>
-<p class="linemarker linemarker-90">run <strong>runBioFOA.m</strong></p>
+<p class="linemarker linemarker-24">run <strong>runBioFOA.m</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">runBioFOA</span><span class="p">(</span><span class="s2">&quot;spectral&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="linemarker linemarker-97">output:</p>
+<p class="linemarker linemarker-31">output:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">==========</span><span class="n">run</span> <span class="n">Ensemble</span> <span class="n">Pruning</span><span class="o">.==================</span>
 <span class="n">goolam</span>
 <span class="o">==========</span><span class="n">load</span> <span class="n">spectral</span> <span class="n">ensemble</span><span class="o">=================</span>
@@ -206,7 +150,7 @@
 <span class="mf">0.9100</span>
 </pre></div>
 </div>
-<p class="linemarker linemarker-109">The <strong>final_clustering.csv</strong> is produced and saved in the <strong>./OutputData</strong>.</p>
+<p class="linemarker linemarker-43">The <strong>final_clustering.csv</strong> is produced and saved in the <strong>./OutputData</strong>.</p>
 </section>
 </section>
 
@@ -215,6 +159,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="runSpectral.m.html" class="btn btn-neutral float-left" title="runSpectral.m" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Spectral_usage.html" class="btn btn-neutral float-right" title="Basic usage workflow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
