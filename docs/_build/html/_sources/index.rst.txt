@@ -51,3 +51,8 @@ Email address: fanyi21@mails.jlu.edu.cn, lixt314@jlu.edu.cn.
    ./Leiden_usage.rst
    ./Louvain_usage.rst
 
+.. toctree::
+   :maxdepth: 3
+   :caption: History
+
+   ./release_history.rst
