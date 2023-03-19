@@ -78,14 +78,8 @@ runLeiden <- function(res=1, ensemble_num=9){
       out.path = out.path,
       dataname = dataname
     )
-    if (enn == 1) {
-      db <- clt
-    }
-    else {
-      db <- cbind(db, clt)
-    }
     write.table(
-      db,
+      clt,
       file = paste(out.path, "/", algorithm.dataname, res[rr], ".csv", sep = ""),
       row.names = FALSE,
       col.names = FALSE
