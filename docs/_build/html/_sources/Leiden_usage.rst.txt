@@ -54,7 +54,7 @@ output:
 
     R
     source("runLeiden.R")
-    runLeiden(res=1)
+    runLeiden(res=1, ensemble_num = 10)
 
 output:
 

@@ -1,13 +1,17 @@
 runLouvain.R
 =============
 
-.. py:function:: runLouvain(res)
+.. py:function:: runLouvain(res, , ensemble_num)
 
     The Louvain clustering algorithm is employed to address the non-linear embedding in the latent space to produce multiple underlying cluster results to generate cluster ensemble.
 
-    :Parameters: .. class:: res: default='1'
+    :Parameters 1: .. class:: res: default='1'
 
-    :Attributes: .. class:: res: resolution
+    :Attributes 1: .. class:: res: resolution
+
+    :Parameters 2: .. class:: ensemble_num: default='10'
+
+    :Attributes 2: .. class:: ensemble_num: number of basic clusterings
 
 Example
 -------
@@ -18,7 +22,7 @@ run **runLouvain.R**:
 
     R
     source("runLouvain.R")
-    runLouvain(res=1)
+    runLouvain(res=1, ensemble_num = 10)
 
 output:
 

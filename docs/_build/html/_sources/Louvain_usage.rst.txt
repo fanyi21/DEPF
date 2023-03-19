@@ -54,7 +54,7 @@ output:
 
     R
     source("runLouvain.R")
-    runLouvain(res=1)
+    runLouvain(res=1, ensemble_num = 10)
 
 output:
 

@@ -96,20 +96,34 @@
 <h1>runLouvain.R<a class="headerlink" href="#runlouvain-r" title="Permalink to this heading"></a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="runLouvain">
-<span class="sig-name descname"><span class="pre">runLouvain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">res</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#runLouvain" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">runLouvain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">res</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensemble_num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#runLouvain" title="Permalink to this definition"></a></dt>
 <dd><p class="linemarker linemarker-6">The Louvain clustering algorithm is employed to address the non-linear embedding in the latent space to produce multiple underlying cluster results to generate cluster ensemble.</p>
 <dl class="field-list">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters 1<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="py class">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">res:</span> <span class="pre">default='1'</span></span></dt>
 <dd></dd></dl>
 
 </dd>
-<dt class="field-even">Attributes<span class="colon">:</span></dt>
+<dt class="field-even">Attributes 1<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="py class">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">res:</span> <span class="pre">resolution</span></span></dt>
+<dd></dd></dl>
+
+</dd>
+<dt class="field-odd">Parameters 2<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ensemble_num:</span> <span class="pre">default='10'</span></span></dt>
+<dd></dd></dl>
+
+</dd>
+<dt class="field-even">Attributes 2<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ensemble_num:</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">basic</span> <span class="pre">clusterings</span></span></dt>
 <dd></dd></dl>
 
 </dd>
@@ -118,13 +132,13 @@
 
 <section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
-<p class="linemarker linemarker-15">run <strong>runLouvain.R</strong>:</p>
+<p class="linemarker linemarker-19">run <strong>runLouvain.R</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">R</span>
 <span class="n">source</span><span class="p">(</span><span class="s2">&quot;runLouvain.R&quot;</span><span class="p">)</span>
-<span class="n">runLouvain</span><span class="p">(</span><span class="n">res</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">runLouvain</span><span class="p">(</span><span class="n">res</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ensemble_num</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="linemarker linemarker-23">output:</p>
+<p class="linemarker linemarker-27">output:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">**********************************************</span> <span class="o">.</span>
 <span class="n">output</span> <span class="mi">9</span> <span class="n">of</span>  <span class="mi">1</span>  <span class="n">latent</span><span class="p">:</span>  <span class="n">goolam</span> <span class="o">.</span>
 <span class="o">**********************************************</span> <span class="o">.</span>
@@ -173,7 +187,7 @@
 <span class="n">Elapsed</span> <span class="n">time</span><span class="p">:</span> <span class="mi">0</span> <span class="n">seconds</span>
 </pre></div>
 </div>
-<p class="linemarker linemarker-75">The <strong>Louvain_resolution_1.csv</strong> is produced and saved in the <strong>./OutputData</strong>.</p>
+<p class="linemarker linemarker-79">The <strong>Louvain_resolution_1.csv</strong> is produced and saved in the <strong>./OutputData</strong>.</p>
 </section>
 </section>
 

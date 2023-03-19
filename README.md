@@ -93,14 +93,14 @@ $ Rscript runHA.R
 $ cd DEPF/HierarchicalAutoencoder/
 source("runLouvain.R")
 #res: resolution
-runLouvain(res=1) 
+runLouvain(res=1, ensemble_num=10) 
 ```
 - &#x1F346; ***Leiden***. The ***Leiden_resolution_1.csv*** is produced and saved in the ***./OutputData***.
 ```r
 $ cd DEPF/HierarchicalAutoencoder/
 source("runLleiden.R")
 #res: resolution
-runLeiden(res=1) 
+runLeiden(res=1, ensemble_num=10) 
 ```
 - &#x1F346; ***spectral clustering***. The ***spectral_cluster_K_10.csv*** is produced and saved in the ***./OutputData***.
 ```matlab
