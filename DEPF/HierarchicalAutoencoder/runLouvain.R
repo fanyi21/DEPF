@@ -66,7 +66,7 @@ clust.ensemble = function(num.latent = 9, res, out.path, dataname) {
 }
 ######################             main          -----------------------------
 runLouvain <- function(res=1, ensemble_num=10){
-  for (enn in 1:ensemble_number) {
+  for (enn in 1:ensemble_num) {
     for (rr in 1:length(res)) {
       clt <- clust.ensemble(
         num.latent = 9,
