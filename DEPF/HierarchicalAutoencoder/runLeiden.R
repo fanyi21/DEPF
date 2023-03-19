@@ -65,14 +65,22 @@ clust.ensemble = function(num.latent = 9, res, out.path, dataname) {
   clt
 }
 ######################             main          -----------------------------
-runLeiden <- function(res=res){
-  for (rr in 1:length(res)) {
-    clt <- clust.ensemble(
-      num.latent = 9,
-      res = res[rr],
-      out.path = out.path,
-      dataname = dataname
-    )
-    write.table(clt,file = paste(out.path,"/",algorithm.dataname,res[rr],".csv",sep = ""), row.names = FALSE, col.names = FALSE)
+runLeiden <- function(res=1, ensemble_num=10){
+  for (enn in 1:ensemble_number) {
+    for (rr in 1:length(res)) {
+      clt <- clust.ensemble(
+        num.latent = 9,
+        res = res[rr],
+        out.path = out.path,
+        dataname = dataname
+      )
+      if (enn == 1) {
+        db <- clt
+      }
+      else {
+        db <- cbind(db, clt)
+      }
+    }
   }
+  write.table(db,file = paste(out.path,"/",algorithm.dataname,res[rr],".csv",sep = ""), row.names = FALSE, col.names = FALSE)
 }
