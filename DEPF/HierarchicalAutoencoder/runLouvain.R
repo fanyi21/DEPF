@@ -65,22 +65,30 @@ clust.ensemble = function(num.latent = 9, res, out.path, dataname) {
   clt
 }
 ######################             main          -----------------------------
-runLouvain <- function(res=1, ensemble_num=10){
-  for (enn in 1:ensemble_num) {
-    for (rr in 1:length(res)) {
-      clt <- clust.ensemble(
-        num.latent = 9,
-        res = res[rr],
-        out.path = out.path,
-        dataname = dataname
-      )
-      if (enn == 1) {
-        db <- clt
-      }
-      else {
-        db <- cbind(db, clt)
-      }
-    }
+runLouvain <- function(res=1, ensemble_num=9){
+  if (ensemble_num < 2) {
+    ensemble_num <- 2
+  }else if (ensemble_num >9) {
+    ensemble_num <- 9
   }
-  write.table(db,file = paste(out.path,"/",algorithm.dataname,res[rr],".csv",sep = ""), row.names = FALSE, col.names = FALSE)
+  for (rr in 1:length(res)) {
+    clt <- clust.ensemble(
+      num.latent = ensemble_num,
+      res = res[rr],
+      out.path = out.path,
+      dataname = dataname
+    )
+    if (enn == 1) {
+      db <- clt
+    }
+    else {
+      db <- cbind(db, clt)
+    }
+    write.table(
+      db,
+      file = paste(out.path, "/", algorithm.dataname, res[rr], ".csv", sep = ""),
+      row.names = FALSE,
+      col.names = FALSE
+    )
+  }
 }
