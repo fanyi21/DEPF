@@ -28,33 +28,25 @@ GO_MF_diff <- enrichGO(gene = diff_entrez$ENTREZID,
                        keyType = "ENTREZID",
                        OrgDb = org.Hs.eg.db, 
                        ont = "MF", 
-                       readable = TRUE,
-                       pvalueCutoff  = 0.05,
-                       qvalueCutoff =0.05) 
+                       readable = TRUE) 
 #CC:
 GO_CC_diff <- enrichGO(gene = diff_entrez$ENTREZID,
                        keyType = "ENTREZID",
                        OrgDb = org.Hs.eg.db,
                        ont = "CC",
-                       readable = TRUE,
-                       pvalueCutoff  = 0.05,
-                       qvalueCutoff =0.05)
+                       readable = TRUE)
 #BP:
 GO_BP_diff <- enrichGO(gene = diff_entrez$ENTREZID,
                        keyType = "ENTREZID",
                        OrgDb = org.Hs.eg.db,
                        ont = "BP",
-                       readable = TRUE,
-                       pvalueCutoff  = 0.05,
-                       qvalueCutoff =0.05)
+                       readable = TRUE)
 #MF、CC、BP三合一：
 GO_all_diff <- enrichGO(gene = diff_entrez$ENTREZID,
                         keyType = "ENTREZID",
                         OrgDb = org.Hs.eg.db,
                         ont = "ALL", #三合一选择“ALL”
-                        readable = TRUE,
-                        pvalueCutoff  = 0.05,
-                        qvalueCutoff =0.05)
+                        readable = TRUE)
 
 write.csv(GO_MF_diff@result, "./GO_MF.csv", row.names = F)
 write.csv(GO_CC_diff@result, "./GO_CC.csv", row.names = F)
